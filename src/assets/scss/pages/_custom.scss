@@ -1,0 +1,32 @@
+.logo {
+  background: url('assets/images/logo.png') center no-repeat;
+  display: block;
+  width: 128px;
+  height: 48px;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-size: contain;
+}
+
+.ec-container {
+  margin-top: 64px;
+  min-height: calc(100vh - 50px - 76px);
+}
+
+.banner {
+  &-img {
+    min-height: 85vh;
+    width: 100%;
+    background: url('assets/images/banner.png') center no-repeat;
+    background-size: cover;
+  }
+}
+
+.subscribe {
+  background: url('assets/images/subscribe.png') center no-repeat;
+  display: block;
+  width: 100%;
+  min-height: 40vh;
+  background-size: cover;
+}
