@@ -1,6 +1,6 @@
 <template>
   <VueLoading v-model:active="isLoading"></VueLoading>
-  <div class="p-7">
+  <div class="py-7">
     <div v-if="followList.length">
       <div class="row justify-content-center">
         <div class="col-lg-10">
@@ -10,7 +10,7 @@
               <thead>
                 <tr>
                   <th scope="col">品名</th>
-                  <th scope="col">分類</th>
+                  <th scope="col" class="d-md-block d-none">分類</th>
                   <th scope="col">價格</th>
                   <th scope="col">購物車</th>
                   <th scope="col">取消</th>
@@ -25,7 +25,9 @@
                       </p>
                     </router-link>
                   </td>
-                  <td class="align-middle">{{ item.category }}</td>
+                  <td class="align-middle d-md-block d-none">
+                    {{ item.category }}
+                  </td>
                   <td class="align-middle">
                     {{ $filters.currency(item.price) }}
                   </td>
@@ -36,11 +38,12 @@
                       @click.prevent="addToCart(item.id)"
                       :disabled="isProcessing"
                     >
-                      <i
-                        class="fas fa-spinner fa-spin"
+                      <span
+                        class="spinner-grow spinner-grow-sm"
+                        role="status"
+                        aria-hidden="true"
                         v-if="loadingItem === item.id"
-                      >
-                      </i>
+                      ></span>
                       <i v-else class="bi bi-bag-plus fs-5"></i>
                     </button>
                   </td>
