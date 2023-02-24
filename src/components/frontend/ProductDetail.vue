@@ -102,6 +102,7 @@
         :pagination="{
           clickable: true,
         }"
+        allowTouchMove: true
         :breakpoints="{
           425: {
             slidesPerView: 1,
