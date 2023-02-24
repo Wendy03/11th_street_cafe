@@ -74,10 +74,7 @@
         </tbody>
       </table>
     </div>
-    <AdminPagination
-      :pages="pagination"
-      @change-page="getOrders"
-    />
+    <AdminPagination :pages="pagination" @change-page="getOrders" />
     <OrderModal
       ref="orderModal"
       @update-order="updateOrder"

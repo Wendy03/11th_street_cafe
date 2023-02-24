@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Toast from '../utils/Toast';
 import AdminNavbar from '../components/backend/AdminNavbar.vue';
 import AdminTabs from '../components/backend/AdminTabs.vue';
+import Toast from '../utils/Toast';
 
 const { VITE_API } = import.meta.env;
 

@@ -68,7 +68,7 @@
                     placeholder="請輸入連結"
                   />
                   <div>
-                    <img class="img-fluid" :src="image"/>
+                    <img class="img-fluid" :src="image" />
                   </div>
                   <button
                     type="button"

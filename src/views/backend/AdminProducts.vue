@@ -56,10 +56,7 @@
           </tbody>
         </table>
       </div>
-      <AdminPagination
-        :pages="pagination"
-        @change-page="getProducts"
-      />
+      <AdminPagination :pages="pagination" @change-page="getProducts" />
       <ProductModal
         ref="productModal"
         @update-product="updateProduct"

@@ -162,8 +162,8 @@
 </template>
 
 <script>
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import modalMixin from '@/mixins/modalMixin';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default {
   props: {
@@ -192,15 +192,7 @@ export default {
       editor: ClassicEditor,
       editorConfig: {
         toolbar: {
-          items: [
-            'heading',
-            'bold',
-            'italic',
-            'link',
-            'undo',
-            'redo',
-            '|',
-          ],
+          items: ['heading', 'bold', 'italic', 'link', 'undo', 'redo', '|'],
         },
       },
     };

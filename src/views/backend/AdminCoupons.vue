@@ -52,10 +52,7 @@
           </tr>
         </tbody>
       </table>
-      <AdminPagination
-        :pages="pagination"
-        @change-page="getCoupons"
-      />
+      <AdminPagination :pages="pagination" @change-page="getCoupons" />
       <CouponModal
         ref="couponModal"
         :coupon="tempCoupon"

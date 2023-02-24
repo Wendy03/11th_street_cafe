@@ -15,7 +15,9 @@
         >
       </li>
       <li class="nav-item">
-        <router-link to="/admin/articles" class="nav-link" href="#">文章管理</router-link>
+        <router-link to="/admin/articles" class="nav-link" href="#"
+          >文章管理</router-link
+        >
       </li>
     </ul>
   </div>

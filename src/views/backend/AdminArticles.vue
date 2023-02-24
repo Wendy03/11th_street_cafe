@@ -56,10 +56,7 @@
         </tbody>
       </table>
     </div>
-    <AdminPagination
-      :pages="pagination"
-      @change-page="getArticles"
-    />
+    <AdminPagination :pages="pagination" @change-page="getArticles" />
     <ArticleModal
       ref="articleModal"
       :article="tempArticle"
