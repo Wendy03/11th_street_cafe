@@ -145,7 +145,7 @@ export default {
       isLoading: false,
     };
   },
-  wahch: {
+  watch: {
     '$route.params': {
       immediate: true,
     },
