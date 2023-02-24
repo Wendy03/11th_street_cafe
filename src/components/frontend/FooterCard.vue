@@ -19,16 +19,16 @@
                 常見問題
               </router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="/login" class="nav-link text-white">
-                後台管理
-              </router-link>
-            </li>
           </ul>
         </div>
-        <p class="mb-0 text-center">
-          <small>無商業用途，僅供學習使用</small>
-        </p>
+        <div class="d-flex justify-content-center">
+          <p class="mb-0 text-center me-2">
+            <small>無商業用途，僅供學習使用</small>
+          </p>
+          <router-link to="/login" class="nav-link text-white">
+            <i class="bi bi-gear-fill"></i>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
