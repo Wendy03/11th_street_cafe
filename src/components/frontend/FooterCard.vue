@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark">
+  <div class="bg-dark sticky-bottom">
     <div class="container">
       <div class="text-white py-3">
         <div class="d-flex justify-content-center">
