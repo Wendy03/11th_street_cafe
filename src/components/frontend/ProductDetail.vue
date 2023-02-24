@@ -1,6 +1,6 @@
 <template>
   <VueLoading v-model:active="isLoading"></VueLoading>
-  <div v-if="product.imageUrl">
+  <div v-if="product.imageUrl" class="pb-9">
     <nav aria-label="breadcrumb mt-5">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -94,48 +94,32 @@
   </div>
   <hr />
   <template v-if="relativeProduct.length">
-    <h3 class="mt-7">相關商品</h3>
-    <div>
-      <swiper
-        :slidesPerView="1"
-        :spaceBetween="10"
-        :pagination="{
-          clickable: true,
-        }"
-        :breakpoints="{
-          425: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-        }"
-        :modules="modules"
-        class="mySwiper"
+    <h3 class="my-7">相關商品</h3>
+    <div class="row">
+      <div
+        v-for="item in relativeProduct"
+        :key="item.id"
+        class="col-lg-3 mb-0 mb-2"
       >
-        <swiper-slide v-for="item in relativeProduct" :key="item.id">
-          <div class="card h-100">
-            <div
-              style="
-                min-height: 200px;
-                background-size: cover;
-                background-position: center;
-                cursor: pointer;
-              "
-              :style="{ backgroundImage: `url(${item.imageUrl})` }"
-              @click.prevent="toggleId(item.id)"
-            ></div>
-            <div class="card-body">
-              <h6 class="card-title">
-                {{ item.title }}
-              </h6>
-              <div class="text-right pr-2">{{ item.price }} 元</div>
-            </div>
+        <div class="card h-100">
+          <div
+            style="
+              min-height: 200px;
+              background-size: cover;
+              background-position: center;
+              cursor: pointer;
+            "
+            :style="{ backgroundImage: `url(${item.imageUrl})` }"
+            @click.prevent="toggleId(item.id)"
+          ></div>
+          <div class="card-body">
+            <h6 class="card-title">
+              {{ item.title }}
+            </h6>
+            <div class="text-right pr-2">{{ item.price }} 元</div>
           </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </div>
     </div>
   </template>
 </template>
@@ -147,11 +131,6 @@ import productsStore from '@/stores/frontend/productsStore';
 import statusStore from '@/stores/statusStore';
 import Toast from '@/utils/Toast';
 import { mapActions, mapState } from 'pinia';
-import { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 
@@ -159,7 +138,6 @@ export default {
   data() {
     return {
       id: '',
-      modules: [Pagination],
       product: {},
       relativeProduct: [],
       qty: 1,
@@ -167,9 +145,10 @@ export default {
       isLoading: false,
     };
   },
-  components: {
-    Swiper,
-    SwiperSlide,
+  wahch: {
+    '$route.params': {
+      immediate: true,
+    },
   },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
