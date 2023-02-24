@@ -1,6 +1,6 @@
+import Toast from '@/utils/Toast';
 import axios from 'axios';
 import { defineStore } from 'pinia';
-import Toast from '@/utils/Toast';
 import statusStore from '../statusStore';
 
 const status = statusStore();

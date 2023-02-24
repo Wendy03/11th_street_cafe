@@ -1,10 +1,10 @@
 <template>
   <div>
-    <BannerCard/>
-    <SelectCardVue/>
-    <AboutCard/>
-    <HomeCategory/>
-    <SubscribeCard/>
+    <BannerCard />
+    <SelectCardVue />
+    <AboutCard />
+    <HomeCategory />
+    <SubscribeCard />
   </div>
 </template>
 
@@ -17,8 +17,7 @@ import SubscribeCard from '@/components/frontend/SubscribeCard.vue';
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   components: {
     BannerCard,

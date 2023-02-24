@@ -26,7 +26,9 @@
                     </router-link>
                   </td>
                   <td class="align-middle">{{ item.category }}</td>
-                  <td class="align-middle">{{ $filters.currency(item.price) }}</td>
+                  <td class="align-middle">
+                    {{ $filters.currency(item.price) }}
+                  </td>
                   <td>
                     <button
                       type="button"

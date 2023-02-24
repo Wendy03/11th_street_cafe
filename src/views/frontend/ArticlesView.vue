@@ -1,6 +1,6 @@
 <template>
   <div class="container my-12">
-    <ArticlesCard/>
+    <ArticlesCard />
   </div>
 </template>
 

@@ -15,21 +15,22 @@
     <div class="row">
       <div class="col-sm-5">
         <div
-            class="position-absolute heart-icon mt-1"
-            style="cursor: pointer"
-            @click.prevent="toggleFollow(product.id)"
-          >
-            <i
-              class="bi bi-heart text-danger shadow-sm p-1 bg-body rounded rounded-circle"
-              v-if="followIds.indexOf(product.id) === -1"
-            ></i>
-            <i
-              class="bi bi-heart-fill text-danger shadow-sm p-1 bg-body rounded rounded-circle"
-              v-else
-            ></i>
-          </div>
+          class="position-absolute heart-icon mt-1"
+          style="cursor: pointer"
+          @click.prevent="toggleFollow(product.id)"
+        >
+          <i
+            class="bi bi-heart text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+            v-if="followIds.indexOf(product.id) === -1"
+          ></i>
+          <i
+            class="bi bi-heart-fill text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+            v-else
+          ></i>
+        </div>
         <div
-          style="min-height: 50vh;
+          style="
+            min-height: 50vh;
             background-size: cover;
             background-position: center;
           "
@@ -195,8 +196,9 @@ export default {
     },
     getRelative() {
       const { category, id } = this.product;
-      this.relativeProduct = this.products.filter((item) => item.category === category
-      && item.id !== id);
+      this.relativeProduct = this.products.filter(
+        (item) => item.category === category && item.id !== id,
+      );
     },
     toggleId(id) {
       this.$router.push(`/product/${id}`);

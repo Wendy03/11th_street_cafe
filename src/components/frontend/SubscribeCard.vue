@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2';
 import Toast from '@/utils/Toast';
+import Swal from 'sweetalert2';
 
 export default {
   data() {

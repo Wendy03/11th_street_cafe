@@ -30,8 +30,10 @@
           <p class="d-md-block d-none mb-1 text-muted" style="font-size: 14px">
             {{ item.product.description }}
           </p>
-          <div class="d-flex flex-md-row flex-column
-          justify-content-md-between align-items-md-center w-100">
+          <div
+            class="d-flex flex-md-row flex-column
+            justify-content-md-between align-items-md-center w-100"
+          >
             <div class="input-group align-items-center">
               <div class="input-group-prepend pe-1">
                 <button

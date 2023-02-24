@@ -41,8 +41,7 @@ export default defineStore('products', {
   },
   getters: {
     filterProducts: (state) => {
-      const currentCategory = state.products.filter((product) => (state.filterCategory
-      === '全部商品'
+      const currentCategory = state.products.filter((product) => (state.filterCategory === '全部商品'
         ? state.products
         : product.category === state.filterCategory));
       return currentCategory;
