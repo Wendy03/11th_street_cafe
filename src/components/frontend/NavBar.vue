@@ -2,14 +2,16 @@
   <div class="fixed-top">
     <div id="nav">
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container px-md-0 position-relative">
-          <router-link to="/" class="navbar-brand fs-1 logo"
-            >11 街咖啡</router-link
-          >
-          <div class="d-flex">
+        <div class="container px-md-0 px-3 position-relative">
+          <div class="d-flex flex-row justify-content-between w-100">
+            <div>
+              <router-link to="/" class="navbar-brand fs-1 logo"
+                >11 街咖啡</router-link
+              >
+            </div>
             <ul class="navbar-nav flex-row">
-              <li class="nav-item me-md-3 me-lg-3 order-lg-2 order-1">
-                <router-link to="/cart" class="nav-link">
+              <li class="nav-item ms-md-2 order-lg-2 order-1">
+                <router-link to="/cart" class="nav-link px-2">
                   <i class="bi bi-bag-fill text-secondary"></i>
                   <span class="badge badge-pill rounded-pill bg-danger">{{
                     cart.carts?.length
@@ -32,11 +34,11 @@
                   class="collapse navbar-collapse"
                   id="navbarSupportedContent"
                 >
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                       <router-link
                         to="/products"
-                        class="nav-link text-secondary"
+                        class="nav-link text-secondary px-lg-2"
                       >
                         商品列表
                       </router-link>
@@ -44,7 +46,7 @@
                     <li class="nav-item">
                       <router-link
                         to="/articles"
-                        class="nav-link text-secondary"
+                        class="nav-link text-secondary px-lg-2"
                         href="#"
                       >
                         咖啡專欄
@@ -53,7 +55,7 @@
                     <li class="nav-item">
                       <router-link
                         to="/follows"
-                        class="nav-link text-secondary"
+                        class="nav-link text-secondary px-lg-2"
                         href="#"
                       >
                         追蹤商品
@@ -89,3 +91,17 @@ export default {
   },
 };
 </script>
+
+<style>
+@media (max-width: 768px) {
+  .nav-link.active {
+    background-color: #c1966c;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .nav-link.active {
+    border-bottom: solid#FFFFFF 3px;
+  }
+}
+</style>
