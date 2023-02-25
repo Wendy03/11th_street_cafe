@@ -64,12 +64,14 @@
       </div>
     </div>
     <div v-else>
-      <div class="d-flex justify-content-center py-7">
-        <h2 class="mb-3 fs-4">目前的追蹤清單是空的，請選擇您喜歡的商品</h2>
-        <router-link to="/products" class="text-dark mt-5 mt-3 h5">
-          <i class="bi bi-cart mt-3"></i>
-          查看商品
-        </router-link>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="mb-3 fs-4">目前的追蹤清單是空的，請選擇您喜歡的商品</h2>
+          <router-link to="/products" class="btn btn-primary mt-3 text-end">
+            <i class="bi bi-cart mb-md-7 mt-3"></i>
+            查看商品
+          </router-link>
+        </div>
       </div>
       <HomeCategory />
     </div>
