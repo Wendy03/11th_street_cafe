@@ -145,11 +145,6 @@ export default {
       isLoading: false,
     };
   },
-  watch: {
-    '$route.params': {
-      immediate: true,
-    },
-  },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
     ...mapActions(cartStore, ['addToCart']),
