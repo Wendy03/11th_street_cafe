@@ -99,7 +99,7 @@
       <div
         v-for="item in relativeProduct"
         :key="item.id"
-        class="col-lg-3 mb-0 mb-2"
+        class="col-lg-3 col-md-6 mb-0 mb-2"
       >
         <div class="card h-100">
           <div
