@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary text-dark py-12">
+  <div class="bg-secondary text-dark py-12 overflow-hidden">
     <div class="container my-5">
       <h2 class="text-dark text-center mb-lg-12 mb-5">精選商品</h2>
       <div
