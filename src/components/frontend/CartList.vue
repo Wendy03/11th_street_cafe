@@ -37,6 +37,7 @@
             <div class="input-group align-items-center">
               <div class="input-group-prepend pe-1">
                 <button
+                  type="button"
                   class="btn btn-primary btn-sm"
                   @click.prevent="updateCart(item, item.qty - 1)"
                   :disabled="isProcessing || item.qty === 1"
@@ -56,6 +57,7 @@
               />
               <div class="input-group-append ps-1">
                 <button
+                  type="button"
                   class="btn btn-primary btn-sm"
                   @click.prevent="updateCart(item, item.qty + 1)"
                   :disabled="isProcessing || item.qty === 5"

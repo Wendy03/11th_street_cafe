@@ -49,7 +49,7 @@
                   </td>
                   <td>
                     <button
-                      href="#"
+                      type="button"
                       class="btn btn-outline-dark btn-sm border-0"
                       @click.prevent="toggleFollow(item.id)"
                     >
