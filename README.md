@@ -75,4 +75,4 @@
 ##### 15.編輯文章
 ##### 16.刪除文章
 
-![image](https://imgur.com/rKupr85)
+[Imgur](https://imgur.com/rKupr85)
