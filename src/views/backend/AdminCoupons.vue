@@ -11,7 +11,7 @@
         建立新的優惠券
       </button>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive-lg">
       <table class="table mt-4">
         <thead>
           <tr>

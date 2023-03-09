@@ -2,12 +2,16 @@
   <div class="col-lg-4">
     <div class="border p-4 mb-4 bg-light">
       <div v-for="item in cart.carts" :key="item.id" class="d-flex mb-2">
-        <img
-          :src="item.product.imageUrl"
-          :alt="item.product.title"
-          class="me-2"
-          style="width: 48px; height: 48px; object-fit: cover"
-        />
+        <div
+          style="
+            width: 55px;
+            max-height: 48px;
+            background-size: cover;
+            background-position: center;
+          "
+          class="rounded-0 me-3"
+          :style="{ backgroundImage: `url(${item.product.imageUrl})` }"
+        ></div>
         <div class="w-100">
           <div class="d-flex justify-content-between">
             <p class="mb-0 fw-bold">{{ item.product.title }}</p>

@@ -5,7 +5,7 @@
         <img
           src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
           alt="11th Street Cafe"
-          class="img-fluid rounded-circle"
+          class="img-fluid rounded-circle px-0"
           style="width: 170px; height: 170px; object-fit: cover"
         />
         <div class="col-md-4 ms-md-5">

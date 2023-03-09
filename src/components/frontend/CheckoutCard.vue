@@ -13,12 +13,16 @@
               class="list-group-item px-0"
             >
               <div class="d-flex mt-2">
-                <img
-                  :src="item.product?.imageUrl"
-                  :alt="item.product?.title"
-                  class="me-2"
-                  style="width: 60px; height: 60px; object-fit: cover"
-                />
+                <div
+                  style="
+                    width: 65px;
+                    max-height: 60px;
+                    background-size: cover;
+                    background-position: center;
+                  "
+                  class="rounded-0 me-3"
+                  :style="{ backgroundImage: `url(${item.product?.imageUrl})` }"
+                ></div>
                 <div class="w-100 d-flex flex-column">
                   <div class="d-flex justify-content-between fw-bold">
                     <h5>{{ item.product?.title }}</h5>
@@ -96,7 +100,7 @@
       </div>
     </form>
     <div v-if="order.is_paid" class="text-end">
-      <RouterLink to="/" class="btn btn-outline-dark me-2 rounded-0 my-4">
+      <RouterLink to="/" class="btn btn-primary me-2 rounded-0 my-4">
         回首頁
       </RouterLink>
     </div>

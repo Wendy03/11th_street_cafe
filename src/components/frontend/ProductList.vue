@@ -32,16 +32,18 @@
             ></i>
           </div>
           <div class="card-body">
-            <span class="badge bg-primary float-right ml-2">
-              {{ product.category }}
-            </span>
-            <h5 class="card-title">
-              <a href="#" class="text-dark">{{ product.title }}</a>
-            </h5>
-            <p class="card-text">{{ product.description }}</p>
-            <div class="text-right pr-2">
-              {{ $filters.currency(product.price) }} 元
-            </div>
+            <RouterLink :to="`/product/${product.id}`">
+              <span class="badge bg-primary float-right ml-2 mb-2">
+                {{ product.category }}
+              </span>
+              <h5 class="card-title text-dark">
+                {{ product.title }}
+              </h5>
+              <p class="card-text text-dark">{{ product.description }}</p>
+              <div class="text-end text-dark fs-5 pr-2">
+                {{ $filters.currency(product.price) }} 元
+              </div>
+            </RouterLink>
           </div>
           <div class="card-footer d-grid gap-2 border-top-0">
             <button

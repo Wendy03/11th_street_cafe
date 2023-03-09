@@ -77,7 +77,7 @@
       >
         <div>
           <RouterLink to="/cart" class="text-dark mt-6">
-            <i class="fas fa-chevron-left me-2"></i>
+            <i class="bi bi-caret-left-fill me-2"></i>
             回購物車
           </RouterLink>
         </div>

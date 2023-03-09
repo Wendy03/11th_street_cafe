@@ -93,6 +93,10 @@
     </div>
   </div>
   <hr />
+  <div class="my-7">
+    <InformationCard />
+  </div>
+  <hr />
   <template v-if="relativeProduct.length">
     <h3 class="my-7">相關商品</h3>
     <div class="row">
@@ -125,6 +129,7 @@
 </template>
 
 <script>
+import InformationCard from '@/components/frontend/InformationCard.vue';
 import cartStore from '@/stores/frontend/cartStore';
 import followsStore from '@/stores/frontend/followsStore';
 import productsStore from '@/stores/frontend/productsStore';
@@ -146,7 +151,7 @@ export default {
       isLoading: false,
     };
   },
-  components: { RouterLink },
+  components: { RouterLink, InformationCard },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
     ...mapActions(cartStore, ['addToCart']),

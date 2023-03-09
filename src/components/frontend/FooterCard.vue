@@ -1,7 +1,7 @@
 <template>
   <div class="bg-dark">
     <div class="container">
-      <div class="text-white py-3">
+      <div class="text-white py-5">
         <div class="d-flex justify-content-center">
           <ul class="d-flex list-unstyled mb-0">
             <li class="nav-item me-2">
@@ -25,7 +25,7 @@
           <p class="mb-0 text-center me-2">
             <small>無商業用途，僅供學習使用</small>
           </p>
-          <RouterLink to="/login" class="nav-link text-white">
+          <RouterLink  to="/login" class="nav-link text-white">
             <i class="bi bi-gear-fill"></i>
           </RouterLink>
         </div>

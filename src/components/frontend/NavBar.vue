@@ -2,7 +2,7 @@
   <div class="fixed-top">
     <div id="nav">
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container px-md-0 px-3 position-relative">
+        <div class="container px-md-0 px-3 position-relative py-2">
           <div class="d-flex flex-row justify-content-between w-100">
             <div>
               <RouterLink to="/" class="navbar-brand fs-1 logo">
@@ -13,9 +13,11 @@
               <li class="nav-item ms-md-2 order-lg-2 order-1">
                 <RouterLink to="/cart" class="nav-link px-2">
                   <i class="bi bi-bag-fill text-secondary"></i>
-                  <span class="badge badge-pill rounded-pill bg-danger">{{
-                    cart.carts?.length
-                  }}</span>
+                  <span
+                    v-if="cart.carts?.length"
+                    class="badge badge-pill rounded-pill bg-primary text-dark"
+                    >{{ cart.carts?.length }}</span
+                  >
                 </RouterLink>
               </li>
               <li class="nav-item order-lg-1 order-2">

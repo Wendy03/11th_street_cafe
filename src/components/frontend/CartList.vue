@@ -12,12 +12,16 @@
         :key="item.id"
         class="d-flex mt-4 bg-light"
       >
-        <img
-          :src="item.product.imageUrl"
-          :alt="item.product.title"
-          class="img-fluid"
-          style="width: 120px; height: 120px; object-fit: cover"
-        />
+        <div
+          style="
+            width: 130px;
+            max-height: 130px;
+            background-size: cover;
+            background-position: center;
+          "
+          class="rounded-0"
+          :style="{ backgroundImage: `url(${item.product.imageUrl})` }"
+        ></div>
         <div class="w-100 p-3 position-relative">
           <a
             href="#"
@@ -84,11 +88,19 @@
         <p class="mb-0 h4 fw-bold">總計</p>
         <p class="mb-0 h4 fw-bold">NT${{ cart.final_total }}</p>
       </div>
-      <RouterLink
-        to="/order"
-        class="btn btn-primary btn-block mt-4 rounded-0 py-3"
-        >確認訂單
-      </RouterLink>
+      <div
+        class="d-flex mt-4 justify-content-between align-items-md-center align-items-end w-100"
+      >
+        <RouterLink to="/products" class="text-dark mt-5 h5">
+          <i class="bi bi-caret-left-fill"></i>
+          繼續購物
+        </RouterLink>
+        <RouterLink
+          to="/order"
+          class="btn btn-primary btn-block mt-4 rounded-0 py-3"
+          >確認訂單
+        </RouterLink>
+      </div>
     </div>
     <div v-else>
       <h2 class="mt-5 fs-2">購物車目前是空的，快來挑選商品吧！</h2>

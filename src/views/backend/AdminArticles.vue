@@ -11,7 +11,7 @@
         建立新文章
       </button>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive-lg">
       <table class="table mt-4">
         <thead>
           <tr>

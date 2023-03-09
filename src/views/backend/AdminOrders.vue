@@ -1,7 +1,7 @@
 <template>
   <div>
     <VueLoading v-model:active="isLoading" />
-    <div class="table-responsive">
+    <div class="table-responsive-lg">
       <table class="table mt-4">
         <thead>
           <tr>

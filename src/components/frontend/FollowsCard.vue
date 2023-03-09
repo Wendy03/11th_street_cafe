@@ -2,17 +2,17 @@
   <VueLoading v-model:active="isLoading" />
   <div class="py-7">
     <div v-if="followList.length">
-      <div class="row justify-content-center">s
+      <div class="row justify-content-center">
         <div class="col-lg-10">
-          <h3 class="mt-5">追蹤商品</h3>
-          <div class="table-responsive mt-5">
-            <table class="table">
+          <h3 class="mt-5">追蹤清單</h3>
+          <div class="table-responsive-lg mt-5">
+            <table class="table table-hover">
               <thead>
                 <tr>
                   <th scope="col">品名</th>
-                  <th scope="col" class="d-md-block d-none">分類</th>
+                  <th scope="col">分類</th>
                   <th scope="col">價格</th>
-                  <th scope="col">購物車</th>
+                  <th scope="col">購買</th>
                   <th scope="col">取消</th>
                 </tr>
               </thead>
@@ -25,7 +25,7 @@
                       </p>
                     </RouterLink>
                   </td>
-                  <td class="align-middle d-md-block d-none">
+                  <td class="align-middle">
                     {{ item.category }}
                   </td>
                   <td class="align-middle">
