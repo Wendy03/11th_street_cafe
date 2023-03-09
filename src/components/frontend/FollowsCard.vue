@@ -1,8 +1,8 @@
 <template>
-  <VueLoading v-model:active="isLoading"></VueLoading>
+  <VueLoading v-model:active="isLoading" />
   <div class="py-7">
     <div v-if="followList.length">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center">s
         <div class="col-lg-10">
           <h3 class="mt-5">追蹤商品</h3>
           <div class="table-responsive mt-5">
@@ -19,11 +19,11 @@
               <tbody>
                 <tr v-for="item in followList" :key="item.id">
                   <td style="white-space: nowrap">
-                    <router-link :to="`/product/${item.id}`">
+                    <RouterLink :to="`/product/${item.id}`">
                       <p class="text-dark align-middle">
                         <strong>{{ item.title }}</strong>
                       </p>
-                    </router-link>
+                    </RouterLink>
                   </td>
                   <td class="align-middle d-md-block d-none">
                     {{ item.category }}
@@ -67,10 +67,10 @@
       <div class="row justify-content-center">
         <div class="col-md-8">
           <h2 class="mb-3 fs-4">目前的追蹤清單是空的，請選擇您喜歡的商品</h2>
-          <router-link to="/products" class="btn btn-primary mt-3 text-end">
+          <RouterLink to="/products" class="btn btn-primary mt-3 text-end">
             <i class="bi bi-cart mb-md-7 mt-3"></i>
             查看商品
-          </router-link>
+          </RouterLink>
         </div>
       </div>
       <HomeCategory />
@@ -84,13 +84,14 @@ import followsStore from '@/stores/frontend/followsStore';
 import productsStore from '@/stores/frontend/productsStore';
 import statusStore from '@/stores/statusStore';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 import HomeCategory from './HomeCategory.vue';
 
 export default {
   data() {
     return {};
   },
-  components: { HomeCategory },
+  components: { RouterLink, HomeCategory },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
     ...mapActions(followsStore, ['getFollows', 'toggleFollow']),

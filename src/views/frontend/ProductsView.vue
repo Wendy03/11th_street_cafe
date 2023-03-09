@@ -1,9 +1,9 @@
 <template>
   <div class="container my-9">
-    <VueLoading v-model:active="isLoading"></VueLoading>
+    <VueLoading v-model:active="isLoading" />
     <div class="row">
-      <ProductCategory/>
-      <ProductList/>
+      <ProductCategory />
+      <ProductList />
     </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <AdminNavbar/>
+  <AdminNavbar />
   <div class="container py-3">
-    <AdminTabs/>
-    <router-view v-if="isAuth"></router-view>
+    <AdminTabs />
+    <RouterView v-if="isAuth" />
   </div>
 </template>
 
@@ -10,6 +10,7 @@
 import AdminNavbar from '@/components/backend/AdminNavbar.vue';
 import AdminTabs from '@/components/backend/AdminTabs.vue';
 import Toast from '@/utils/Toast';
+import { RouterView } from 'vue-router';
 
 const { VITE_API } = import.meta.env;
 
@@ -19,7 +20,7 @@ export default {
       isAuth: false,
     };
   },
-  components: { AdminNavbar, AdminTabs },
+  components: { RouterView, AdminNavbar, AdminTabs },
   methods: {
     checkAdmin() {
       const token = document.cookie.replace(

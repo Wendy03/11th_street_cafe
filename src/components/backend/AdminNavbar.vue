@@ -1,9 +1,10 @@
 <template>
   <div>
     <nav class="navbar navbar-expand navbar-dark bg-dark px-3">
-      <router-link to="/" class="navbar-brand fs-1 logo">11 街咖啡</router-link>
+      <RouterLink to="/" class="navbar-brand fs-1 logo">11 街咖啡</RouterLink>
       <div class="ms-auto">
         <button
+          type="button"
           class="btn btn-secondary btn-sm rounded"
           @click.prevent="logout"
         >
@@ -15,10 +16,13 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
   methods: {
     logout() {
       document.cookie = 'hexToken=; expires=; path=/';

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <VueLoading v-model:active="isLoading"></VueLoading>
+    <VueLoading v-model:active="isLoading" />
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link to="/articles">咖啡專欄</router-link>
+          <RouterLink to="/articles">咖啡專欄</RouterLink>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           {{ article.title }}
@@ -30,6 +30,7 @@
 
 <script>
 import Toast from '@/utils/Toast';
+import { RouterLink } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 
@@ -40,6 +41,7 @@ export default {
       isLoading: false,
     };
   },
+  components: { RouterLink },
   methods: {
     getArticle() {
       this.isLoading = true;

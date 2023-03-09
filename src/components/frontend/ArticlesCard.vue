@@ -17,13 +17,13 @@
                 <div class="card-text">
                   <div v-html="article.description"></div>
                 </div>
-                <div class="text-end mt-lg-5">
-                  <router-link
+                <div class="text-end mt-3">
+                  <RouterLink
                     :to="`/article/${article.id}`"
                     v-if="article.isPublic"
                   >
                     READ MORE
-                  </router-link>
+                  </RouterLink>
                 </div>
               </div>
             </div>
@@ -38,11 +38,13 @@
 import articlesStore from '@/stores/frontend/articlesStore';
 import statusStore from '@/stores/statusStore';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
   methods: {
     ...mapActions(articlesStore, ['getArticles']),
   },

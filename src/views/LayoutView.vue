@@ -1,18 +1,18 @@
 <template>
   <NavBar />
   <div class="ec-container">
-    <router-view></router-view>
+    <RouterView />
   </div>
   <div
-    class="position-fixed end-0 bottom-0 scroll-top-btn pe-3 pb-3"
+    class="position-fixed end-0 bottom-0 scroll-top-btn pe-3 pb-4"
     v-if="isShowed"
   >
     <button
       type="button"
-      class="btn btn-secondary shadow btn-sm"
+      class="btn btn-secondary shadow btn"
       @click="scrollToTop"
     >
-      <i class="bi bi-arrow-up-circle-fill"></i>
+      <i class="bi bi-arrow-up-circle-fill fs-4"></i>
     </button>
   </div>
   <FooterCard />
@@ -21,6 +21,7 @@
 <script>
 import FooterCard from '@/components/frontend/FooterCard.vue';
 import NavBar from '@/components/frontend/NavBar.vue';
+import { RouterView } from 'vue-router';
 
 export default {
   data() {
@@ -28,7 +29,7 @@ export default {
       isShowed: false,
     };
   },
-  components: { NavBar, FooterCard },
+  components: { RouterView, NavBar, FooterCard },
   methods: {
     scrollToTop() {
       window.scrollTo({

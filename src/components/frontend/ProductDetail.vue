@@ -1,10 +1,10 @@
 <template>
-  <VueLoading v-model:active="isLoading"></VueLoading>
+  <VueLoading v-model:active="isLoading" />
   <div v-if="product.imageUrl" class="pb-9">
     <nav aria-label="breadcrumb mt-5">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link to="/products">全部商品</router-link>
+          <RouterLink to="/products">全部商品</RouterLink>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           {{ product.title }}
@@ -15,16 +15,16 @@
     <div class="row">
       <div class="col-sm-5">
         <div
-          class="position-absolute heart-icon mt-1"
+          class="position-absolute heart-icon mt-1 ps-1"
           style="cursor: pointer"
           @click.prevent="toggleFollow(product.id)"
         >
           <i
-            class="bi bi-heart text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+            class="bi bi-heart text-danger shadow-sm p-1 bg-secondary"
             v-if="followIds.indexOf(product.id) === -1"
           ></i>
           <i
-            class="bi bi-heart-fill text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+            class="bi bi-heart-fill text-danger shadow-sm p-1 bg-secondary"
             v-else
           ></i>
         </div>
@@ -52,10 +52,10 @@
         </template>
       </div>
       <div class="col-sm-7">
-        <span class="badge bg-primary rounded-pill mb-2">{{
+        <span class="badge bg-primary rounded-pill mt-md-0 mt-5">{{
           product.category
         }}</span>
-        <p>商品描述：{{ product.description }}</p>
+        <p class="mt-mb-0 mt-3">商品描述：{{ product.description }}</p>
         <p v-if="product.content">商品內容：{{ product.content }}</p>
         <template v-if="product.category !== '周邊商品'">
           <ul>
@@ -131,6 +131,7 @@ import productsStore from '@/stores/frontend/productsStore';
 import statusStore from '@/stores/statusStore';
 import Toast from '@/utils/Toast';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 
@@ -145,6 +146,7 @@ export default {
       isLoading: false,
     };
   },
+  components: { RouterLink },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
     ...mapActions(cartStore, ['addToCart']),

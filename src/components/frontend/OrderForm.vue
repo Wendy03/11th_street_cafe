@@ -76,9 +76,10 @@
         class="d-flex mt-4 justify-content-between align-items-md-center align-items-end w-100"
       >
         <div>
-          <router-link to="/cart" class="text-dark mt-6"
-            ><i class="fas fa-chevron-left me-2"></i>回購物車</router-link
-          >
+          <RouterLink to="/cart" class="text-dark mt-6">
+            <i class="fas fa-chevron-left me-2"></i>
+            回購物車
+          </RouterLink>
         </div>
         <div class="text-end">
           <button
@@ -96,6 +97,7 @@
 
 <script>
 import Toast from '@/utils/Toast';
+import { RouterLink } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 
@@ -114,6 +116,7 @@ export default {
       isProcessing: false,
     };
   },
+  components: { RouterLink },
   methods: {
     createOrder() {
       this.isProcessing = true;

@@ -6,9 +6,9 @@
           來自世界各地的豆子<br />為您帶來一杯獨一無二的咖啡
         </h2>
         <div>
-          <router-link to="/products" class="btn btn-primary ms-5"
-            >訂購去</router-link
-          >
+          <RouterLink to="/products" class="btn btn-primary ms-5">
+            訂購去
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -16,9 +16,12 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
 };
 </script>

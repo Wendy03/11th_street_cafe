@@ -5,18 +5,18 @@
         <div class="container px-md-0 px-3 position-relative">
           <div class="d-flex flex-row justify-content-between w-100">
             <div>
-              <router-link to="/" class="navbar-brand fs-1 logo"
-                >11 街咖啡</router-link
-              >
+              <RouterLink to="/" class="navbar-brand fs-1 logo">
+                11 街咖啡
+              </RouterLink>
             </div>
             <ul class="navbar-nav flex-row">
               <li class="nav-item ms-md-2 order-lg-2 order-1">
-                <router-link to="/cart" class="nav-link px-2">
+                <RouterLink to="/cart" class="nav-link px-2">
                   <i class="bi bi-bag-fill text-secondary"></i>
                   <span class="badge badge-pill rounded-pill bg-danger">{{
                     cart.carts?.length
                   }}</span>
-                </router-link>
+                </RouterLink>
               </li>
               <li class="nav-item order-lg-1 order-2">
                 <button
@@ -36,30 +36,30 @@
                 >
                   <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <router-link
+                      <RouterLink
                         to="/products"
                         class="nav-link text-secondary px-lg-2"
                       >
                         商品列表
-                      </router-link>
+                      </RouterLink>
                     </li>
                     <li class="nav-item">
-                      <router-link
+                      <RouterLink
                         to="/articles"
                         class="nav-link text-secondary px-lg-2"
                         href="#"
                       >
                         咖啡專欄
-                      </router-link>
+                      </RouterLink>
                     </li>
                     <li class="nav-item">
-                      <router-link
+                      <RouterLink
                         to="/follows"
                         class="nav-link text-secondary px-lg-2"
                         href="#"
                       >
-                        追蹤商品
-                      </router-link>
+                        追蹤清單
+                      </RouterLink>
                     </li>
                   </ul>
                 </div>
@@ -75,11 +75,13 @@
 <script>
 import cartStore from '@/stores/frontend/cartStore';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
   methods: {
     ...mapActions(cartStore, ['getCarts']),
   },

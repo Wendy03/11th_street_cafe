@@ -15,9 +15,9 @@
           <p class="text-secondary">
             “從原產地的一株咖啡樹，到烘焙成一粒粒金黃咖啡豆；堅持採購並且烘焙最高品質的咖啡，這是我們一直努力的基本原則。”
           </p>
-          <router-link to="/products" class="btn btn-light">
+          <RouterLink to="/products" class="btn btn-light">
             查看商品
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -132,3 +132,14 @@
     </div>
   </div>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router';
+
+export default {
+  data() {
+    return {};
+  },
+  components: { RouterLink },
+};
+</script>

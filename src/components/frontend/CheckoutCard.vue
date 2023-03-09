@@ -96,15 +96,16 @@
       </div>
     </form>
     <div v-if="order.is_paid" class="text-end">
-      <router-link to="/" class="btn btn-outline-dark me-2 rounded-0 my-4">
+      <RouterLink to="/" class="btn btn-outline-dark me-2 rounded-0 my-4">
         回首頁
-      </router-link>
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script>
 import Toast from '@/utils/Toast';
+import { RouterLink } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 export default {
@@ -119,6 +120,7 @@ export default {
       isProcessing: false,
     };
   },
+  components: { RouterLink },
   methods: {
     getOrder() {
       this.isLoading = true;

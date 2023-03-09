@@ -7,7 +7,7 @@
         :key="product.id"
       >
         <div class="card border-0 shadow-sm h-100">
-          <router-link :to="`/product/${product.id}`">
+          <RouterLink :to="`/product/${product.id}`">
             <div
               style="
                 height: 170px;
@@ -16,18 +16,18 @@
               "
               :style="{ backgroundImage: `url(${product.imageUrl})` }"
             ></div>
-          </router-link>
+          </RouterLink>
           <div
-            class="position-absolute heart-icon mt-1"
+            class="position-absolute heart-icon mt-1 ps-1"
             style="cursor: pointer"
             @click.prevent="toggleFollow(product.id)"
           >
             <i
-              class="bi bi-heart text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+              class="bi bi-heart text-danger shadow-sm p-1 bg-secondary"
               v-if="followIds.indexOf(product.id) === -1"
             ></i>
             <i
-              class="bi bi-heart-fill text-danger shadow-sm p-1 bg-body rounded rounded-circle"
+              class="bi bi-heart-fill text-danger shadow-sm p-1 bg-secondary"
               v-else
             ></i>
           </div>
@@ -71,11 +71,13 @@ import followsStore from '@/stores/frontend/followsStore';
 import productsStore from '@/stores/frontend/productsStore';
 import statusStore from '@/stores/statusStore';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
   methods: {
     ...mapActions(productsStore, ['getProducts']),
     ...mapActions(followsStore, ['getFollows', 'toggleFollow']),

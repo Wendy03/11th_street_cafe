@@ -16,9 +16,9 @@
           />
         </div>
         <div class="col-md-5 m-auto">
-          <router-link to="/product/-NLihoUv9jvcoEhDnM4C">
+          <RouterLink to="/product/-NLihoUv9jvcoEhDnM4C">
             <h4 class="mt-4 text-center">耶加雪菲</h4>
-          </router-link>
+          </RouterLink>
           <p>
             選自衣索比亞的耶家雪菲，孔加（Konga）的G1日曬豆，除了耶加雪菲特有的花香，尾韻帶有微醺蘭姆酒香。
           </p>
@@ -38,9 +38,9 @@
           />
         </div>
         <div class="col-md-5 m-auto">
-          <router-link to="/product/-NLzhQESIKMUAxu9fUcE">
+          <RouterLink to="/product/-NLzhQESIKMUAxu9fUcE">
             <h4 class="mt-4 text-center">哥倫比亞</h4>
-          </router-link>
+          </RouterLink>
           <p>
             來自哥倫比亞娜玲瓏（Narino）產區，海拔2,100公尺，聞得到稀有的花香味，入口時散發出熱帶水果與可可交織的濃郁口感，還帶有一點柑橘香
           </p>
@@ -60,9 +60,9 @@
           />
         </div>
         <div class="col-md-5 m-auto">
-          <router-link to="/product/-NLzh79SLXVzt3EaM3ij">
+          <RouterLink to="/product/-NLzh79SLXVzt3EaM3ij">
             <h4 class="mt-4 text-center">夏威夷可娜</h4>
-          </router-link>
+          </RouterLink>
           <p>
             獅門莊園Lion Gates Farms，以養分豐富的火山土壤及陽光、雨量、
             溫度皆適宜的夏威夷天氣下，所栽培出的精品可娜。
@@ -74,9 +74,12 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
   data() {
     return {};
   },
+  components: { RouterLink },
 };
 </script>

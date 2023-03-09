@@ -5,19 +5,19 @@
         <div class="d-flex justify-content-center">
           <ul class="d-flex list-unstyled mb-0">
             <li class="nav-item me-2">
-              <router-link to="/products" class="nav-link text-white">
+              <RouterLink to="/products" class="nav-link text-white">
                 商品列表
-              </router-link>
+              </RouterLink>
             </li>
             <li class="nav-item me-2">
-              <router-link to="/about" class="nav-link text-white">
+              <RouterLink to="/about" class="nav-link text-white">
                 關於我們
-              </router-link>
+              </RouterLink>
             </li>
             <li class="nav-item me-2">
-              <router-link to="/information" class="nav-link text-white">
+              <RouterLink to="/information" class="nav-link text-white">
                 常見問題
-              </router-link>
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -25,11 +25,22 @@
           <p class="mb-0 text-center me-2">
             <small>無商業用途，僅供學習使用</small>
           </p>
-          <router-link to="/login" class="nav-link text-white">
+          <RouterLink to="/login" class="nav-link text-white">
             <i class="bi bi-gear-fill"></i>
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router';
+
+export default {
+  data() {
+    return {};
+  },
+  components: { RouterLink },
+};
+</script>

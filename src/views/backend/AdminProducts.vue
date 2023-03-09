@@ -1,6 +1,6 @@
 <template>
   <div class="mt-2">
-    <VueLoading v-model:active="isLoading"></VueLoading>
+    <VueLoading v-model:active="isLoading" />
     <div>
       <div class="text-end mt-4">
         <button class="btn btn-primary" @click="openModal('new')">

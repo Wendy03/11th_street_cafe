@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueLoading v-model:active="isLoading"></VueLoading>
+    <VueLoading v-model:active="isLoading" />
     <div class="text-end mt-4">
       <button
         class="btn btn-primary"

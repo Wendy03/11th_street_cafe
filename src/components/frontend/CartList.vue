@@ -84,18 +84,18 @@
         <p class="mb-0 h4 fw-bold">總計</p>
         <p class="mb-0 h4 fw-bold">NT${{ cart.final_total }}</p>
       </div>
-      <router-link
+      <RouterLink
         to="/order"
         class="btn btn-primary btn-block mt-4 rounded-0 py-3"
-        >確認訂單</router-link
-      >
+        >確認訂單
+      </RouterLink>
     </div>
     <div v-else>
       <h2 class="mt-5 fs-2">購物車目前是空的，快來挑選商品吧！</h2>
-      <router-link class="btn btn-primary mt-3 text-end" to="/products">
+      <RouterLink class="btn btn-primary mt-3 text-end" to="/products">
         <i class="bi bi-cart"></i>
         選購去
-      </router-link>
+      </RouterLink>
     </div>
   </div>
   <div v-if="!cart.carts?.length" class="mt-5">
@@ -108,12 +108,13 @@ import HomeCategory from '@/components/frontend/HomeCategory.vue';
 import cartStore from '@/stores/frontend/cartStore';
 import statusStore from '@/stores/statusStore';
 import { mapActions, mapState } from 'pinia';
+import { RouterLink } from 'vue-router';
 
 export default {
   data() {
     return {};
   },
-  components: { HomeCategory },
+  components: { RouterLink, HomeCategory },
   methods: {
     ...mapActions(cartStore, [
       'getCarts',

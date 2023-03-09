@@ -1,9 +1,9 @@
 <template>
   <div class="container my-12">
-    <VueLoading v-model:active="isLoading"></VueLoading>
+    <VueLoading v-model:active="isLoading" />
     <div class="row flex-row-reverse justify-content-center py-7">
-      <OrderDetail/>
-      <OrderForm/>
+      <OrderDetail />
+      <OrderForm />
     </div>
   </div>
 </template>
