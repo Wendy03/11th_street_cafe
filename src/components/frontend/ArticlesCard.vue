@@ -2,7 +2,7 @@
   <div class="row justify-content-center py-5">
     <div class="col-lg-8">
       <template v-for="article in articles" :key="article.id">
-        <div v-if="article.isPublic" class="card mb-3">
+        <div v-if="article.isPublic" class="card mb-6">
           <div class="row g-0">
             <div class="col-md-4">
               <img
