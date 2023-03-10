@@ -1,7 +1,7 @@
 <template>
   <div class="fixed-top">
     <div id="nav">
-      <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+      <nav class="navbar navbar-expand-lg bg-black navbar-dark" :key="$route.path">
         <div class="container px-md-0 px-3 position-relative py-2">
           <div class="d-flex flex-row justify-content-between w-100">
             <div>
@@ -85,13 +85,6 @@ export default {
     return {};
   },
   components: { RouterLink },
-  watch: {
-    $route() {
-      if (document.body.offsetWidth < 992) {
-        this.$refs.navbarBtn.click();
-      }
-    },
-  },
   methods: {
     ...mapActions(cartStore, ['getCarts']),
   },
