@@ -1,10 +1,10 @@
 <template>
   <div class="col-lg-6">
     <h3 class="mb-3">客戶資訊</h3>
-    <v-form ref="form" v-slot="{ errors }" @submit="createOrder">
+    <VForm ref="form" v-slot="{ errors }" @submit="createOrder">
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <v-field
+        <VField
           id="email"
           name="email"
           type="email"
@@ -13,13 +13,12 @@
           placeholder="請輸入 Email"
           rules="email|required"
           v-model="form.user.email"
-        ></v-field>
-        <error-message name="email" class="invalid-feedback"></error-message>
+        />
+        <ErrorMessage name="email" class="invalid-feedback" />
       </div>
-
       <div class="mb-3">
         <label for="name" class="form-label">收件人姓名</label>
-        <v-field
+        <VField
           id="name"
           name="姓名"
           type="text"
@@ -28,13 +27,12 @@
           placeholder="請輸入姓名"
           rules="required"
           v-model="form.user.name"
-        ></v-field>
-        <error-message name="姓名" class="invalid-feedback"></error-message>
+        />
+        <ErrorMessage name="姓名" class="invalid-feedback" />
       </div>
-
       <div class="mb-3">
         <label for="tel" class="form-label">收件人電話</label>
-        <v-field
+        <VField
           id="tel"
           name="電話"
           type="tel"
@@ -43,13 +41,12 @@
           placeholder="請輸入電話"
           rules="required|min:8|max:10|numeric"
           v-model="form.user.tel"
-        ></v-field>
-        <error-message name="電話" class="invalid-feedback"></error-message>
+        />
+        <ErrorMessage name="電話" class="invalid-feedback" />
       </div>
-
       <div class="mb-3">
         <label for="address" class="form-label">收件人地址</label>
-        <v-field
+        <VField
           id="address"
           name="地址"
           type="text"
@@ -58,10 +55,9 @@
           placeholder="請輸入地址"
           rules="required"
           v-model="form.user.address"
-        ></v-field>
-        <error-message name="地址" class="invalid-feedback"></error-message>
+        />
+        <ErrorMessage name="地址" class="invalid-feedback" />
       </div>
-
       <div class="mb-3">
         <label for="message" class="form-label">留言</label>
         <textarea
@@ -82,16 +78,12 @@
           </RouterLink>
         </div>
         <div class="text-end">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            :disabled="isProcessing"
-          >
+          <button type="submit" class="btn btn-dark" :disabled="isProcessing">
             送出訂單
           </button>
         </div>
       </div>
-    </v-form>
+    </VForm>
   </div>
 </template>
 

@@ -1,6 +1,19 @@
 <template>
   <div class="container my-12">
     <VueLoading v-model:active="isLoading" />
+    <div class="row justify-content-center mt-13">
+      <div class="col-lg-10">
+        <nav aria-label="breadcrumb mb-5">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item text-gray">購物車</li>
+            <li class="breadcrumb-item text-dark active" aria-current="page">
+              訂單資訊
+            </li>
+            <li class="breadcrumb-item text-gray">結帳</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
     <div class="row flex-row-reverse justify-content-center py-7">
       <OrderDetail />
       <OrderForm />

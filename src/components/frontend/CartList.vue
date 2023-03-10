@@ -1,10 +1,17 @@
 <template>
   <div class="col-md-6">
     <div v-if="cart.carts?.length">
+      <nav aria-label="breadcrumb mt-5">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item text-dark active" aria-current="page">購物車</li>
+          <li class="breadcrumb-item text-gray">訂單資訊</li>
+          <li class="breadcrumb-item text-gray">結帳</li>
+        </ol>
+      </nav>
       <div class="d-flex justify-content-between mb-5">
         <h2 class="mt-2 text-brown font-weight-bold">購物車</h2>
         <a href="#" class="fs-3" @click.prevent="deleteAllCarts">
-          <i class="bi bi-x-lg"></i>
+          <i class="bi bi-x-lg text-dark"></i>
         </a>
       </div>
       <div
@@ -28,7 +35,7 @@
             @click.prevent="removeCartItem(item.id)"
             class="position-absolute"
             style="top: 16px; right: 16px"
-            ><i class="bi bi-x-lg"></i
+            ><i class="bi bi-x-lg text-dark"></i
           ></a>
           <p class="mb-0 fw-bold">{{ item.product.title }}</p>
           <p class="d-md-block d-none mb-1 text-muted" style="font-size: 14px">
@@ -97,14 +104,14 @@
         </RouterLink>
         <RouterLink
           to="/order"
-          class="btn btn-primary btn-block mt-4 rounded-0 py-3"
+          class="btn btn-dark btn-block mt-4 rounded-0 py-3"
           >確認訂單
         </RouterLink>
       </div>
     </div>
     <div v-else>
       <h2 class="mt-5 fs-2">購物車目前是空的，快來挑選商品吧！</h2>
-      <RouterLink class="btn btn-primary mt-3 text-end" to="/products">
+      <RouterLink class="btn btn-dark mt-3 text-end" to="/products">
         <i class="bi bi-cart"></i>
         選購去
       </RouterLink>

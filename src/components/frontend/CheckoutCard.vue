@@ -1,5 +1,26 @@
 <template>
   <div class="col-md-6">
+    <template v-if="order.is_paid === false">
+      <h2 class="mb-4 fw-bolder" v-if="order.is_paid === false">付款</h2>
+      <p>差一步完成訂單，點選確認付款完成訂單</p>
+    </template>
+    <template v-else>
+      <h2 class="mb-4 fw-bolder">付款完成</h2>
+      <div class="mt-4">
+        <h5>感謝訂購</h5>
+      </div>
+    </template>
+    <p>對於咖啡豆品質要求，收到訂單開始製作， 大約 1 ~ 2天出貨</p>
+    <div
+      style="
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+      "
+    ></div>
+  </div>
+  <div class="col-md-6">
     <form @submit.prevent="payOrder">
       <div class="card rounded-0 py-4 mb-3">
         <div class="card-header border-bottom-0 bg-white px-4 py-0">
@@ -95,14 +116,16 @@
           </tbody>
         </table>
       </div>
-      <div class="text-end mt-4" v-if="order.is_paid === false">
-        <button type="submit" class="btn btn-primary">確認付款去</button>
+      <div
+        class="d-flex mt-4 justify-content-between align-items-md-center align-items-end w-100"
+        v-if="order.is_paid === false"
+      >
+        <RouterLink to="/" class="btn btn-primary"> 回首頁 </RouterLink>
+        <button type="submit" class="btn btn-dark">確認付款</button>
       </div>
     </form>
     <div v-if="order.is_paid" class="text-end">
-      <RouterLink to="/" class="btn btn-primary me-2 rounded-0 my-4">
-        回首頁
-      </RouterLink>
+      <RouterLink to="/" class="btn btn-dark me-2 my-4"> 回首頁 </RouterLink>
     </div>
   </div>
 </template>

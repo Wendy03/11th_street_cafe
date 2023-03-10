@@ -3,7 +3,7 @@
     <VueLoading v-model:active="isLoading" />
     <div class="text-end mt-4">
       <button
-        class="btn btn-primary"
+        class="btn btn-dark"
         type="button"
         :disabled="isProcessing"
         @click="openModal('new')"

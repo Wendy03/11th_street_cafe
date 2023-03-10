@@ -9,8 +9,8 @@
   background-size: contain;
 }
 
-.ec-container {
-  margin-top: 64px;
+.main-container {
+  margin-top: 80px;
   min-height: calc(100vh - 50px - 76px);
 }
 
@@ -29,4 +29,11 @@
   width: 100%;
   min-height: 40vh;
   background-size: cover;
+}
+
+.card {
+  &--hover:hover {
+    box-shadow: 0 16px 22px 0 rgba(90, 91, 95, 0.5);
+    top: -5px;
+  }
 }

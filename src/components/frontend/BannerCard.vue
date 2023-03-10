@@ -6,7 +6,7 @@
           來自世界各地的豆子<br />為您帶來一杯獨一無二的咖啡
         </h2>
         <div>
-          <RouterLink to="/products" class="btn btn-primary ms-5">
+          <RouterLink to="/products" class="btn btn-primary ms-5 fs-5">
             訂購去
           </RouterLink>
         </div>

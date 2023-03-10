@@ -11,83 +11,95 @@
         </li>
       </ol>
     </nav>
-    <h2 class="mb-3">{{ product.title }}</h2>
-    <div class="row">
-      <div class="col-sm-5">
-        <div
-          class="position-absolute heart-icon mt-1 ps-1"
-          style="cursor: pointer"
-          @click.prevent="toggleFollow(product.id)"
-        >
-          <i
-            class="bi bi-heart text-danger shadow-sm p-1 bg-secondary"
-            v-if="followIds.indexOf(product.id) === -1"
-          ></i>
-          <i
-            class="bi bi-heart-fill text-danger shadow-sm p-1 bg-secondary"
-            v-else
-          ></i>
-        </div>
-        <div
-          style="
-            min-height: 50vh;
-            background-size: cover;
-            background-position: center;
-          "
-          :style="{ backgroundImage: `url(${product.imageUrl})` }"
-        ></div>
-        <template
-          v-for="(img, index) in product.imagesUrl"
-          :key="index + 'img'"
-        >
-          <div class="row" v-if="img">
-            <div class="col-3">
-              <img
-                :src="img"
-                :alt="index + 'img'"
-                class="card-image mt-2 w-100"
-              />
+    <h2 class="mb-4">{{ product.title }}</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row">
+          <div class="col-sm-5">
+            <div
+              class="position-absolute heart-icon mt-1 ps-1"
+              style="cursor: pointer"
+              @click.prevent="toggleFollow(product.id)"
+            >
+              <i
+                class="bi bi-heart text-danger shadow-sm p-1 bg-secondary"
+                v-if="followIds.indexOf(product.id) === -1"
+              ></i>
+              <i
+                class="bi bi-heart-fill text-danger shadow-sm p-1 bg-secondary"
+                v-else
+              ></i>
+            </div>
+            <div
+              style="
+                min-height: 50vh;
+                background-size: cover;
+                background-position: center;
+              "
+              :style="{ backgroundImage: `url(${product.imageUrl})` }"
+            ></div>
+            <template
+              v-for="(img, index) in product.imagesUrl"
+              :key="index + 'img'"
+            >
+              <div class="row" v-if="img">
+                <div class="col-3">
+                  <img
+                    :src="img"
+                    :alt="index + 'img'"
+                    class="card-image mt-2 w-100"
+                  />
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="col-sm-7">
+            <span class="badge bg-primary rounded-pill mt-md-0 mt-5">{{
+              product.category
+            }}</span>
+            <p class="mt-mb-0 mt-3">
+              {{ product.category === '周邊商品' ? '' : '咖啡風味：'
+              }}{{ product.description }}
+            </p>
+            <div v-if="product.content">
+              【 商品說明 】<br />
+              <p class="ms-2" v-html="product.content"></p>
+            </div>
+            <template v-if="product.category !== '周邊商品'">
+              <ul>
+                <li>產地：{{ product.country }}</li>
+                <li>產區：{{ product.area }}</li>
+                <li>處理方法：{{ product.production }}</li>
+                <li>熟豆重量：227g ± 2g</li>
+                <li>保存期限：30 天</li>
+              </ul>
+            </template>
+            <div class="mb-3">
+              <p class="fs-5">
+                {{ $filters.currency(product.price) }} 元 / {{ product.unit }}
+              </p>
+            </div>
+            <div class="input-group mt-5 w-75">
+              <select class="form-select" name="qty" v-model.number="qty">
+                <option :value="num" v-for="num in 5" :key="num + 'num'">
+                  {{ num }}
+                </option>
+              </select>
+              <button
+                type="button"
+                class="btn btn-dark"
+                @click="addToCart(product.id, qty)"
+              >
+                <span
+                  v-if="product.id === loadingItem"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                加入購物車
+              </button>
             </div>
           </div>
-        </template>
-      </div>
-      <div class="col-sm-7">
-        <span class="badge bg-primary rounded-pill mt-md-0 mt-5">{{
-          product.category
-        }}</span>
-        <p class="mt-mb-0 mt-3">商品描述：{{ product.description }}</p>
-        <p v-if="product.content">商品內容：{{ product.content }}</p>
-        <template v-if="product.category !== '周邊商品'">
-          <ul>
-            <li>產地：{{ product.country }}</li>
-            <li>產區：{{ product.area }}</li>
-            <li>處理方法：{{ product.production }}</li>
-            <li>熟豆重量：227g ± 2g</li>
-            <li>保存期限：30 天</li>
-          </ul>
-        </template>
-        <div class="h5">
-          {{ $filters.currency(product.price) }} 元 / {{ product.unit }}
-        </div>
-        <div class="input-group mt-5 w-75">
-          <select class="form-select" name="qty" v-model.number="qty">
-            <option :value="num" v-for="num in 5" :key="num + 'num'">
-              {{ num }}
-            </option>
-          </select>
-          <button
-            type="button"
-            class="btn btn-primary"
-            @click="addToCart(product.id, qty)"
-          >
-            <span
-              v-if="product.id === loadingItem"
-              class="spinner-border spinner-border-sm"
-              role="status"
-              aria-hidden="true"
-            ></span>
-            加入購物車
-          </button>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
     <VueLoading v-model:active="isLoading" />
     <div>
       <div class="text-end mt-4">
-        <button class="btn btn-primary" @click="openModal('new')">
+        <button class="btn btn-dark" @click="openModal('new')">
           建立新的產品
         </button>
       </div>

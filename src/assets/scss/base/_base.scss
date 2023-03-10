@@ -1,5 +1,8 @@
 body {
   font-family: 'Noto Serif TC', serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {

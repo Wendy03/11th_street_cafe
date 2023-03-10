@@ -2,11 +2,11 @@
   <div class="col-lg-10 col-md-9 my-5">
     <div class="row">
       <div
-        class="col-lg-4 col-md-6 mb-3 mb-4"
+        class="col-lg-4 col-md-6 mb-4"
         v-for="product in filterProducts"
         :key="product.id"
       >
-        <div class="card border-0 shadow-sm h-100">
+        <div class="card border-0 shadow-sm h-100 card--hover">
           <RouterLink :to="`/product/${product.id}`">
             <div
               style="
@@ -39,16 +39,16 @@
               <h5 class="card-title text-dark">
                 {{ product.title }}
               </h5>
-              <p class="card-text text-dark">{{ product.description }}</p>
+              <p class="card-text text-black">{{ product.description }}</p>
               <div class="text-end text-dark fs-5 pr-2">
                 {{ $filters.currency(product.price) }} 元
               </div>
             </RouterLink>
           </div>
-          <div class="card-footer d-grid gap-2 border-top-0">
+          <div class="card-footer d-grid gap-2 border-top-0 px-0 py-0">
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-dark"
               :disabled="isProcessing"
               @click="addToCart(product.id)"
             >

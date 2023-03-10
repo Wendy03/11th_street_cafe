@@ -10,14 +10,13 @@
   >
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-black text-white">
           <h5 class="modal-title" id="exampleModalLabel">
-            <span v-if="isNew">新增優惠卷</span>
-            <span v-else>編輯優惠卷</span>
+            <span>{{ isNew ? '新增優惠卷' : '編輯優惠卷' }}</span>
           </h5>
           <button
             type="button"
-            class="btn-close"
+            class="btn-close btn-close-white"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
@@ -86,7 +85,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-dark"
             :disabled="isProcessing"
             @click="$emit('update-coupon', tempCoupon)"
           >

@@ -1,9 +1,9 @@
 <template>
-  <div class="subscribe">
+  <div class="subscribe d-flex flex-column justify-content-center">
     <div class="container">
-      <div class="row py-7">
+      <div class="row">
         <div class="col-lg-6">
-          <div class="py-7">
+          <div>
             <h2 class="text-light fs-md-2 fs-4 mb-6">
               訂閱獲取優惠卷 & 最新商品
             </h2>

@@ -19,6 +19,7 @@
                 </div>
                 <div class="text-end mt-3">
                   <RouterLink
+                    class="text-dark"
                     :to="`/article/${article.id}`"
                     v-if="article.isPublic"
                   >

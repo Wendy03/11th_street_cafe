@@ -10,13 +10,13 @@
   >
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content border-0">
-        <div class="modal-header bg-dark text-white">
+        <div class="modal-header bg-black text-white">
           <h5 class="modal-title" id="exampleModalLabel">
             <span>{{ isNew ? '新增貼文' : '編輯貼文' }}</span>
           </h5>
           <button
             type="button"
-            class="btn-close"
+            class="btn-close btn-close-white"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
@@ -149,7 +149,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-dark"
             :disabled="isProcessing"
             @click="$emit('update-article', tempArticle)"
           >

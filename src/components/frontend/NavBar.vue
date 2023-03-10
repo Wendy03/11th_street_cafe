@@ -1,7 +1,7 @@
 <template>
   <div class="fixed-top">
     <div id="nav">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <nav class="navbar navbar-expand-lg bg-black navbar-dark">
         <div class="container px-md-0 px-3 position-relative py-2">
           <div class="d-flex flex-row justify-content-between w-100">
             <div>
@@ -15,7 +15,7 @@
                   <i class="bi bi-bag-fill text-secondary"></i>
                   <span
                     v-if="cart.carts?.length"
-                    class="badge badge-pill rounded-pill bg-primary text-dark"
+                    class="badge badge-pill rounded-pill bg-danger"
                     >{{ cart.carts?.length }}</span
                   >
                 </RouterLink>

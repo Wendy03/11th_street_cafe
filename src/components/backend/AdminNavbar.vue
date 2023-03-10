@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand navbar-dark bg-dark px-3">
+    <nav class="navbar navbar-expand navbar-dark bg-black px-3">
       <RouterLink to="/" class="navbar-brand fs-1 logo">11 街咖啡</RouterLink>
       <div class="ms-auto">
         <button

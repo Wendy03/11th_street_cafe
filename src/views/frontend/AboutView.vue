@@ -9,8 +9,11 @@
           style="width: 170px; height: 170px; object-fit: cover"
         />
         <div class="col-md-4 ms-md-5">
-          <h3 style="font-family: 'Neuton', serif" class="mt-md-0 mt-3">
-            11th Street Cafe
+          <h3
+            style="font-family: 'Neuton', serif"
+            class="mt-md-0 mt-3 fst-italic fw-bolder"
+          >
+            11<span class="fs-5">th</span> Street Cafe
           </h3>
           <p class="text-secondary">
             “從原產地的一株咖啡樹，到烘焙成一粒粒金黃咖啡豆；堅持採購並且烘焙最高品質的咖啡，這是我們一直努力的基本原則。”
@@ -109,7 +112,7 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16452.417349836032!2d120.32529178750181!3d23.30272344048618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e85e7ac253331%3A0x30db98652bc42d9e!2z5paw54ef6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1677178339970!5m2!1szh-TW!2stw"
             width="100%"
-            height="450"
+            height="350"
             style="border: 0"
             allowfullscreen
             loading="lazy"
@@ -117,16 +120,24 @@
           ></iframe>
         </div>
         <div class="col-lg-4 ms-lg-3">
-          <h3 class="font-weight-bold mt-7">聯絡我們</h3>
-          <p class="text mt-5">
-            <i class="bi bi-telephone me-2"></i>電話: 06-1234567
-          </p>
-          <p class="text mt-2">
-            <i class="bi bi-geo-fill me-2"></i>地址: 順著咖啡香就可以找到我們
-          </p>
-          <p class="text mt-2">
-            <i class="bi bi-envelope-at me-2"></i>E-mail: coffee_11@services.com
-          </p>
+          <div class="d-flex flex-column justify-content-center h-100">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <h3 class="font-weight-bold mt-7">聯絡我們</h3>
+                <p class="text mt-5">
+                  <i class="bi bi-telephone me-2"></i>電話: 06-1234567
+                </p>
+                <p class="text mt-2">
+                  <i class="bi bi-geo-fill me-2"></i>地址:
+                  順著咖啡香就可以找到我們
+                </p>
+                <p class="text mt-2">
+                  <i class="bi bi-envelope-at me-2"></i>E-mail:
+                  coffee_11@services.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

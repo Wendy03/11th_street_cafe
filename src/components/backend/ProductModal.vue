@@ -9,13 +9,13 @@
   >
     <div class="modal-dialog modal-xl">
       <div class="modal-content border-0">
-        <div class="modal-header bg-dark text-white">
+        <div class="modal-header bg-black text-white">
           <h5 id="productModalLabel" class="modal-title">
             <span>{{ isNew ? '新增' : '編輯' }}產品</span>
           </h5>
           <button
             type="button"
-            class="btn-close"
+            class="btn-close btn-close-white"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
@@ -52,7 +52,6 @@
                   />
                 </div>
               </div>
-
               <hr />
               <p class="mb-3 h4 pt-4">多圖新增</p>
               <div class="mt-5" v-if="tempProduct.imagesUrl">
@@ -105,7 +104,6 @@
                   v-model="tempProduct.title"
                 />
               </div>
-
               <div class="row">
                 <div class="mb-3 col-md-6">
                   <label for="category" class="form-label">分類</label>
@@ -128,7 +126,6 @@
                   />
                 </div>
               </div>
-
               <div class="row">
                 <div class="mb-3 col-md-6">
                   <label for="origin_price" class="form-label">原價</label>
@@ -154,7 +151,6 @@
                 </div>
               </div>
               <hr />
-
               <div class="mb-3">
                 <label for="description" class="form-label">產品描述</label>
                 <textarea
@@ -167,15 +163,12 @@
                 </textarea>
               </div>
               <div class="mb-3">
-                <label for="content" class="form-label">說明內容</label>
-                <textarea
-                  id="description"
-                  type="text"
-                  class="form-control"
-                  placeholder="請輸入說明內容"
+                <p>說明內容</p>
+                <ckeditor
+                  :editor="editor"
+                  :config="editorConfig"
                   v-model="tempProduct.content"
-                >
-                </textarea>
+                ></ckeditor>
               </div>
               <hr />
               <div class="row">
@@ -250,7 +243,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-dark"
             :disabled="isProcessing"
             @click="$emit('update-product', tempProduct)"
           >
@@ -269,8 +262,9 @@
 </template>
 
 <script>
-import Toast from '@/utils/Toast';
 import modalMixin from '@/mixins/modalMixin';
+import Toast from '@/utils/Toast';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
 
@@ -295,6 +289,12 @@ export default {
     return {
       modal: {},
       tempProduct: {},
+      editor: ClassicEditor,
+      editorConfig: {
+        toolbar: {
+          items: ['heading', 'bold', 'italic', 'link', 'undo', 'redo', '|'],
+        },
+      },
     };
   },
   mixins: [modalMixin],

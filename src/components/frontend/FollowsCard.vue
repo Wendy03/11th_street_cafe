@@ -67,7 +67,7 @@
       <div class="row justify-content-center">
         <div class="col-md-8">
           <h2 class="mb-3 fs-4">目前的追蹤清單是空的，請選擇您喜歡的商品</h2>
-          <RouterLink to="/products" class="btn btn-primary mt-3 text-end">
+          <RouterLink to="/products" class="btn btn-dark mt-3 text-end">
             <i class="bi bi-cart mb-md-7 mt-3"></i>
             查看商品
           </RouterLink>
