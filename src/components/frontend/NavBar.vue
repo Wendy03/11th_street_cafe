@@ -22,6 +22,7 @@
               </li>
               <li class="nav-item order-lg-1 order-2">
                 <button
+                  ref="navbarBtn"
                   class="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
@@ -37,7 +38,7 @@
                   id="navbarSupportedContent"
                 >
                   <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-0 py-md-3">
                       <RouterLink
                         to="/products"
                         class="nav-link text-secondary px-lg-2"
@@ -45,7 +46,7 @@
                         商品列表
                       </RouterLink>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-0 py-md-3">
                       <RouterLink
                         to="/articles"
                         class="nav-link text-secondary px-lg-2"
@@ -54,7 +55,7 @@
                         咖啡專欄
                       </RouterLink>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-0 py-md-3">
                       <RouterLink
                         to="/follows"
                         class="nav-link text-secondary px-lg-2"
@@ -84,6 +85,13 @@ export default {
     return {};
   },
   components: { RouterLink },
+  watch: {
+    $route() {
+      if (document.body.offsetWidth < 992) {
+        this.$refs.navbarBtn.click();
+      }
+    },
+  },
   methods: {
     ...mapActions(cartStore, ['getCarts']),
   },
@@ -96,7 +104,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @media (max-width: 768px) {
   .nav-link.active {
     background-color: #c1966c;
