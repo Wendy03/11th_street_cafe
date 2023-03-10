@@ -122,6 +122,7 @@ export default {
         };
         this.$refs.couponModal.showModal();
       } else if (type === 'edit') {
+        this.isNew = false;
         this.tempCoupon = { ...item };
         this.$refs.couponModal.showModal();
       } else if (type === 'del') {
