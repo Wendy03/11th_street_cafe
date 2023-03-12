@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <div class="row">
-          <div class="col-sm-5">
+          <div class="col-sm-6">
             <div
               class="position-absolute heart-icon mt-1 ps-1"
               style="cursor: pointer"
@@ -32,7 +32,7 @@
             </div>
             <div
               style="
-                min-height: 50vh;
+                min-height: 350px;
                 background-size: cover;
                 background-position: center;
               "
@@ -53,51 +53,55 @@
               </div>
             </template>
           </div>
-          <div class="col-sm-7">
-            <span class="badge bg-primary rounded-pill mt-md-0 mt-5">{{
-              product.category
-            }}</span>
-            <p class="mt-mb-0 mt-3">
-              {{ product.category === '周邊商品' ? '' : '咖啡風味：'
-              }}{{ product.description }}
-            </p>
-            <div v-if="product.content">
-              【 商品說明 】<br />
-              <p class="ms-2" v-html="product.content"></p>
-            </div>
-            <template v-if="product.category !== '周邊商品'">
-              <ul>
-                <li>產地：{{ product.country }}</li>
-                <li>產區：{{ product.area }}</li>
-                <li>處理方法：{{ product.production }}</li>
-                <li>熟豆重量：227g ± 2g</li>
-                <li>保存期限：30 天</li>
-              </ul>
-            </template>
-            <div class="mb-3">
-              <p class="fs-5">
-                {{ $filters.currency(product.price) }} 元 / {{ product.unit }}
+          <div class="col-sm-6">
+            <div class="d-flex flex-column justify-content-between h-100">
+              <div>
+                <span class="badge bg-primary rounded-pill mt-md-0 mt-5">{{
+                  product.category
+                }}</span>
+              </div>
+              <p class="mt-mb-0 mt-3">
+                {{ product.category === '周邊商品' ? '' : '咖啡風味：'
+                }}{{ product.description }}
               </p>
-            </div>
-            <div class="input-group mt-5 w-75">
-              <select class="form-select" name="qty" v-model.number="qty">
-                <option :value="num" v-for="num in 5" :key="num + 'num'">
-                  {{ num }}
-                </option>
-              </select>
-              <button
-                type="button"
-                class="btn btn-dark"
-                @click="addToCart(product.id, qty)"
-              >
-                <span
-                  v-if="product.id === loadingItem"
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                加入購物車
-              </button>
+              <div v-if="product.content">
+                【 商品說明 】<br />
+                <p class="ms-2" v-html="product.content"></p>
+              </div>
+              <template v-if="product.category !== '周邊商品'">
+                <ul>
+                  <li>產地：{{ product.country }}</li>
+                  <li>產區：{{ product.area }}</li>
+                  <li>處理方法：{{ product.production }}</li>
+                  <li>熟豆重量：227g ± 2g</li>
+                  <li>保存期限：30 天</li>
+                </ul>
+              </template>
+              <div class="text-end fw-bolder">
+                <p class="fs-5">
+                  {{ $filters.currency(product.price) }} 元 / {{ product.unit }}
+                </p>
+              </div>
+              <div class="input-group">
+                <select class="form-select" name="qty" v-model.number="qty">
+                  <option :value="num" v-for="num in 5" :key="num + 'num'">
+                    {{ num }}
+                  </option>
+                </select>
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  @click="addToCart(product.id, qty)"
+                >
+                  <span
+                    v-if="product.id === loadingItem"
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  加入購物車
+                </button>
+              </div>
             </div>
           </div>
         </div>
