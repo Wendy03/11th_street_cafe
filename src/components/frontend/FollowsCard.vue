@@ -18,9 +18,9 @@
               </thead>
               <tbody>
                 <tr v-for="item in followList" :key="item.id">
-                  <td style="white-space: nowrap">
+                  <td style="white-space: nowrap" class="align-middle">
                     <RouterLink :to="`/product/${item.id}`">
-                      <p class="text-dark align-middle">
+                      <p class="text-dark align-middle mb-0">
                         <strong>{{ item.title }}</strong>
                       </p>
                     </RouterLink>
