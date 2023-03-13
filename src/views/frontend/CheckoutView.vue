@@ -1,6 +1,6 @@
 <template>
   <div class="container my-12">
-    <div class="mt-13">
+    <div class="pt-4">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item text-gray">購物車</li>

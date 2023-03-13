@@ -1,7 +1,7 @@
 <template>
   <VueLoading v-model:active="isLoading" />
-  <div v-if="product.imageUrl" class="pb-9">
-    <nav aria-label="breadcrumb mt-5">
+  <div v-if="product.imageUrl" class="pb-9 pt-4">
+    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <RouterLink to="/products">全部商品</RouterLink>
@@ -11,7 +11,7 @@
         </li>
       </ol>
     </nav>
-    <h2 class="mb-4">{{ product.title }}</h2>
+    <h2 class="my-4">{{ product.title }}</h2>
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <div class="row">

@@ -5,7 +5,7 @@
       <RouterView />
     </div>
   </main>
-  <GoTop/>
+  <GoTop />
   <FooterCard />
 </template>
 
@@ -17,11 +17,13 @@ import { RouterView } from 'vue-router';
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   components: {
-    RouterView, NavBar, FooterCard, GoTop,
+    RouterView,
+    NavBar,
+    FooterCard,
+    GoTop,
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container my-12">
     <VueLoading v-model:active="isLoading" />
-    <div class="row justify-content-center mt-13">
+    <div class="row justify-content-center pt-4">
       <div class="col-lg-10">
         <nav aria-label="breadcrumb mb-5">
           <ol class="breadcrumb">
