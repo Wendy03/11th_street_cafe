@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-10 col-md-9 my-5">
+  <div class="col-lg-10 col-md-9">
     <div class="row">
       <div
         class="col-lg-4 col-md-6 mb-6"
@@ -33,7 +33,9 @@
           </div>
           <div class="card-body">
             <RouterLink :to="`/product/${product.id}`">
-              <span class="badge bg-primary float-right ml-2 mb-2">
+              <span
+                class="badge bg-primary rounded-pill fw-normal float-right ml-2 mb-2"
+              >
                 {{ product.category }}
               </span>
               <h5 class="card-title text-dark">
@@ -41,7 +43,7 @@
               </h5>
               <p class="card-text text-black">{{ product.description }}</p>
               <div class="text-end text-dark fs-5 pr-2">
-                {{ $filters.currency(product.price) }} 元
+                NT$ {{ $filters.currency(product.price) }} 元
               </div>
             </RouterLink>
           </div>

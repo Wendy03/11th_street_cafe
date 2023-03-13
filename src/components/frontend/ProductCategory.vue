@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-2 col-md-3 mb-2 my-5">
+  <div class="col-lg-2 col-md-3 mb-2">
     <ul class="list-group sticky-top top-15">
       <li
         class="list-group-item"

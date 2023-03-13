@@ -1,6 +1,6 @@
 <template>
-  <div class="container my-13">
-    <h2 class="pt-5 text-center">咖啡專欄</h2>
+  <div class="container py-6">
+    <h2 class="mb-6 text-center">咖啡專欄</h2>
     <ArticlesCard />
   </div>
 </template>

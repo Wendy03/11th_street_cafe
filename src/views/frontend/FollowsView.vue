@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-12">
+  <div class="container py-6">
     <FollowsCard />
   </div>
 </template>

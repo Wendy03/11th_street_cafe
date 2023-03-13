@@ -1,17 +1,15 @@
 <template>
-  <div class="container my-12">
-    <div class="pt-4">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item text-gray">購物車</li>
-          <li class="breadcrumb-item text-gray">訂單資訊</li>
-          <li class="breadcrumb-item text-dark active" aria-current="page">
-            結帳
-          </li>
-        </ol>
-      </nav>
-    </div>
-    <div class="row py-7">
+  <div class="container py-6">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item text-gray">購物車</li>
+        <li class="breadcrumb-item text-gray">訂單資訊</li>
+        <li class="breadcrumb-item text-dark active" aria-current="page">
+          結帳
+        </li>
+      </ol>
+    </nav>
+    <div class="row py-4">
       <CheckoutCard />
     </div>
   </div>

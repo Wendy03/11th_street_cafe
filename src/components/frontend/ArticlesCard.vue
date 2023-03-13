@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center py-5">
+  <div class="row justify-content-center py-3">
     <div class="col-lg-8">
       <template v-for="article in articles" :key="article.id">
         <div v-if="article.isPublic" class="card mb-6">

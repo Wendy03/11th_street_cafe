@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-9">
+  <div class="container py-6">
     <VueLoading v-model:active="isLoading" />
     <div class="row">
       <ProductCategory />

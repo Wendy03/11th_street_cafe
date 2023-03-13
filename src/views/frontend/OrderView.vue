@@ -1,7 +1,7 @@
 <template>
-  <div class="container my-12">
+  <div class="container py-5">
     <VueLoading v-model:active="isLoading" />
-    <div class="row justify-content-center pt-4">
+    <div class="row justify-content-center">
       <div class="col-lg-10">
         <nav aria-label="breadcrumb mb-5">
           <ol class="breadcrumb">
@@ -14,7 +14,7 @@
         </nav>
       </div>
     </div>
-    <div class="row flex-row-reverse justify-content-center py-7">
+    <div class="row flex-row-reverse justify-content-center py-4">
       <OrderDetail />
       <OrderForm />
     </div>

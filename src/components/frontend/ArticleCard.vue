@@ -11,13 +11,13 @@
         </li>
       </ol>
     </nav>
-    <div class="row justify-content-center my-8">
+    <div class="row justify-content-center py-7">
       <article class="col-lg-8">
         <h2>{{ article.title }}</h2>
         <p>
-          <small class="text-muted">{{
-            $filters.date(article.create_at)
-          }}</small>
+          <small class="text-muted">
+            {{ $filters.date(article.create_at) }}
+          </small>
           -
           <small class="text-muted">作者：{{ article.author }}</small>
         </p>
