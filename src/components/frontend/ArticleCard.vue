@@ -1,29 +1,31 @@
 <template>
   <div>
     <VueLoading v-model:active="isLoading" />
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <RouterLink to="/articles">咖啡專欄</RouterLink>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          {{ article.title }}
-        </li>
-      </ol>
-    </nav>
-    <div class="row justify-content-center py-7">
-      <article class="col-lg-8">
-        <h2>{{ article.title }}</h2>
-        <p>
-          <small class="text-muted">
-            {{ $filters.date(article.create_at) }}
-          </small>
-          -
-          <small class="text-muted">作者：{{ article.author }}</small>
-        </p>
-        <img :src="article.imageUrl" alt="" class="img-fluid mb-3" />
-        <div v-html="article.content"></div>
-      </article>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <RouterLink to="/articles">咖啡專欄</RouterLink>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{ article.title }}
+            </li>
+          </ol>
+        </nav>
+        <h2 class="mt-5">{{ article.title }}</h2>
+        <article class="py-5">
+          <p>
+            <small class="text-muted">
+              {{ $filters.date(article.create_at) }}
+            </small>
+            -
+            <small class="text-muted">作者：{{ article.author }}</small>
+          </p>
+          <img :src="article.imageUrl" alt="" class="img-fluid mb-3" />
+          <div v-html="article.content"></div>
+        </article>
+      </div>
     </div>
   </div>
 </template>
