@@ -1,20 +1,20 @@
 <template>
   <VueLoading v-model:active="isLoading" />
   <div v-if="product.imageUrl">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <RouterLink to="/products">全部商品</RouterLink>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          {{ product.title }}
-        </li>
-      </ol>
-    </nav>
-    <h2 class="my-4">{{ product.title }}</h2>
-    <div class="row justify-content-center pb-6">
+    <div class="row justify-content-center">
       <div class="col-lg-10">
-        <div class="row">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <RouterLink to="/products">全部商品</RouterLink>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{ product.title }}
+            </li>
+          </ol>
+        </nav>
+        <h2 class="my-4">{{ product.title }}</h2>
+        <div class="row pb-6">
           <div class="col-sm-6">
             <div
               class="position-absolute heart-icon mt-1 ps-1"
@@ -108,45 +108,45 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <hr />
-  <div class="py-6">
-    <InformationCard />
-  </div>
-  <hr />
-  <template v-if="relativeProduct.length">
-    <div class="py-6">
-      <h3 class="mb-5">相關商品</h3>
-      <div class="row mb-5">
-        <div
-          v-for="item in relativeProduct"
-          :key="item.id"
-          class="col-lg-3 col-md-6 mb-0 mb-2"
-        >
-          <div class="card h-100">
-            <div
-              style="
-                min-height: 200px;
-                background-size: cover;
-                background-position: center;
-                cursor: pointer;
-              "
-              :style="{ backgroundImage: `url(${item.imageUrl})` }"
-              @click.prevent="toggleId(item.id)"
-            ></div>
-            <div class="card-body">
-              <h6 class="card-title">
-                {{ item.title }}
-              </h6>
-              <div class="text-end pr-2">NT$ {{ item.price }} 元</div>
+        <hr />
+        <div class="py-6">
+          <InformationCard />
+        </div>
+        <hr />
+        <template v-if="relativeProduct.length">
+          <div class="py-6">
+            <h3 class="mb-5">相關商品</h3>
+            <div class="row mb-5">
+              <div
+                v-for="item in relativeProduct"
+                :key="item.id"
+                class="col-lg-3 col-md-6 mb-0 mb-2"
+              >
+                <div class="card h-100">
+                  <div
+                    style="
+                      min-height: 200px;
+                      background-size: cover;
+                      background-position: center;
+                      cursor: pointer;
+                    "
+                    :style="{ backgroundImage: `url(${item.imageUrl})` }"
+                    @click.prevent="toggleId(item.id)"
+                  ></div>
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      {{ item.title }}
+                    </h6>
+                    <div class="text-end pr-2">NT$ {{ item.price }} 元</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </template>
       </div>
     </div>
-  </template>
+  </div>
 </template>
 
 <script>
