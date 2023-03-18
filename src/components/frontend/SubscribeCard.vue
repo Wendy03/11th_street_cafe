@@ -49,7 +49,7 @@ export default {
         Swal.fire({
           icon: 'success',
           title: '感謝訂閱',
-          text: '優惠碼: follow08',
+          text: '優惠碼: follow11',
         });
       } else {
         Toast.fire({
