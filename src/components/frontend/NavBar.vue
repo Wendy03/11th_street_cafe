@@ -1,10 +1,7 @@
 <template>
   <div class="fixed-top">
     <div id="nav">
-      <nav
-        class="navbar navbar-expand-lg bg-black navbar-dark"
-        :key="$route.path"
-      >
+      <nav class="navbar navbar-expand-lg bg-black navbar-dark">
         <div class="container px-md-0 px-3 position-relative py-2">
           <div class="d-flex flex-row justify-content-between w-100">
             <div>
