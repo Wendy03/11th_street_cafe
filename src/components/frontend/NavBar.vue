@@ -23,26 +23,23 @@
               </li>
               <li class="nav-item order-lg-1 order-2">
                 <button
-                  ref="navbarBtn"
                   class="navbar-toggler"
                   type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+                  @click="toggleNavCollapse"
                 >
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div
                   class="collapse navbar-collapse"
                   id="navbarSupportedContent"
+                  ref="collapse"
                 >
                   <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item py-lg-0 py-md-3">
                       <RouterLink
                         to="/products"
                         class="nav-link text-secondary px-lg-2"
+                        @click="closeNavCollapse"
                       >
                         商品列表
                       </RouterLink>
@@ -51,7 +48,7 @@
                       <RouterLink
                         to="/articles"
                         class="nav-link text-secondary px-lg-2"
-                        href="#"
+                        @click="closeNavCollapse"
                       >
                         咖啡專欄
                       </RouterLink>
@@ -60,7 +57,7 @@
                       <RouterLink
                         to="/follows"
                         class="nav-link text-secondary px-lg-2"
-                        href="#"
+                        @click="closeNavCollapse"
                       >
                         追蹤清單
                       </RouterLink>
@@ -78,22 +75,34 @@
 
 <script>
 import cartStore from '@/stores/frontend/cartStore';
+import Collapse from 'bootstrap/js/dist/collapse';
 import { mapActions, mapState } from 'pinia';
 import { RouterLink } from 'vue-router';
 
 export default {
   data() {
-    return {};
+    return {
+      collapse: {},
+    };
   },
   components: { RouterLink },
   methods: {
     ...mapActions(cartStore, ['getCarts']),
+    toggleNavCollapse() {
+      this.collapse.toggle();
+    },
+    closeNavCollapse() {
+      this.collapse.hide();
+    },
   },
   computed: {
     ...mapState(cartStore, ['cart']),
   },
   mounted() {
     this.getCarts();
+    this.collapse = new Collapse(this.$refs.collapse, {
+      toggle: false,
+    });
   },
 };
 </script>
