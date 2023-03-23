@@ -3,15 +3,17 @@
     <VueLoading v-model:active="isLoading" />
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <nav aria-label="breadcrumb mb-5">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item text-gray">購物車</li>
-            <li class="breadcrumb-item text-dark active" aria-current="page">
-              訂單資訊
-            </li>
-            <li class="breadcrumb-item text-gray">結帳</li>
-          </ol>
-        </nav>
+        <div class="d-flex">
+          <div class="text-gray active me-2">
+            購物車
+            <i class="bi bi-caret-right"></i>
+          </div>
+          <div class="text-dark me-2">
+            訂單資訊
+            <i class="bi bi-caret-right"></i>
+          </div>
+          <div class="text-gray">結帳</div>
+        </div>
       </div>
     </div>
     <div class="row flex-row-reverse justify-content-center py-4">

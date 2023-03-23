@@ -25,13 +25,40 @@
           <img :src="article.imageUrl" alt="" class="img-fluid mb-3" />
           <div v-html="article.content"></div>
         </article>
+        <div
+          v-if="articleIndex !== undefined"
+          class="d-flex flex-lg-row flex-column justify-content-lg-between py-7"
+        >
+          <template v-if="articleIndex - 1 >= 0">
+            <a
+              href="#"
+              class="btn btn-link btn-primary text-dark"
+              @click.prevent="changeArticle(articleIndex - 1)"
+            >
+              上一篇：
+              {{ articles[articleIndex - 1].title }}
+            </a>
+          </template>
+          <template v-if="articleIndex + 1 < articles.length">
+            <a
+              href="#"
+              class="btn btn-link btn-primary text-dark"
+              @click.prevent="changeArticle(articleIndex + 1)"
+            >
+              下一篇：
+              {{ articles[articleIndex + 1].title }}
+            </a>
+          </template>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import articlesStore from '@/stores/frontend/articlesStore';
 import Toast from '@/utils/Toast';
+import { mapActions, mapState } from 'pinia';
 import { RouterLink } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
@@ -41,10 +68,12 @@ export default {
     return {
       article: {},
       isLoading: false,
+      articleIndex: 0,
     };
   },
   components: { RouterLink },
   methods: {
+    ...mapActions(articlesStore, ['getArticles']),
     getArticle() {
       this.isLoading = true;
       const { id } = this.$route.params;
@@ -54,6 +83,7 @@ export default {
           this.isLoading = false;
           const { article } = res.data;
           this.article = article;
+          this.articleIndex = this.articles.filter((item) => item.id === id)[0].num - 1;
         })
         .catch((err) => {
           const errMessage = err.response?.data?.message || '資料錯誤';
@@ -64,9 +94,19 @@ export default {
           });
         });
     },
+    changeArticle(index) {
+      this.$router.push(`/article/${this.articles[index].id}`);
+      setTimeout(() => {
+        this.getArticle();
+      });
+    },
+  },
+  computed: {
+    ...mapState(articlesStore, ['articles']),
   },
   mounted() {
     this.getArticle();
+    this.getArticles();
   },
 };
 </script>

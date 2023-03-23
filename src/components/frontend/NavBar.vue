@@ -11,7 +11,7 @@
             </div>
             <ul class="navbar-nav flex-row">
               <li class="nav-item ms-md-2 order-lg-2 order-1">
-                <RouterLink to="/cart" class="nav-link px-2">
+                <RouterLink to="/cart" class="nav-link px-2 py-lg-2">
                   <i class="bi bi-bag-fill text-secondary"></i>
                   <span
                     v-if="cart.carts?.length"
@@ -23,7 +23,7 @@
               </li>
               <li class="nav-item order-lg-1 order-2">
                 <button
-                  class="navbar-toggler"
+                  class="navbar-toggler mb-4"
                   type="button"
                   @click="toggleNavCollapse"
                 >
@@ -35,28 +35,28 @@
                   ref="collapse"
                 >
                   <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item py-lg-0 py-md-3">
+                    <li class="nav-item">
                       <RouterLink
                         to="/products"
-                        class="nav-link text-secondary px-lg-2"
+                        class="nav-link text-secondary py-lg-2 py-4"
                         @click="closeNavCollapse"
                       >
                         商品列表
                       </RouterLink>
                     </li>
-                    <li class="nav-item py-lg-0 py-md-3">
+                    <li class="nav-item">
                       <RouterLink
                         to="/articles"
-                        class="nav-link text-secondary px-lg-2"
+                        class="nav-link text-secondary py-lg-2 py-4"
                         @click="closeNavCollapse"
                       >
                         咖啡專欄
                       </RouterLink>
                     </li>
-                    <li class="nav-item py-lg-0 py-md-3">
+                    <li class="nav-item">
                       <RouterLink
                         to="/follows"
-                        class="nav-link text-secondary px-lg-2"
+                        class="nav-link text-secondary py-lg-2 py-4"
                         @click="closeNavCollapse"
                       >
                         追蹤清單

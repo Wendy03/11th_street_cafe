@@ -12,23 +12,21 @@
               />
             </div>
             <div class="col-md-8">
-              <div
-                class="card-body d-flex flex-column justify-content-between h-100"
+              <RouterLink
+                class="text-dark"
+                :to="`/article/${article.id}`"
+                v-if="article.isPublic"
               >
-                <h5 class="card-title text-dark">{{ article.title }}</h5>
-                <div class="card-text fw-normal">
-                  <div v-html="article.description"></div>
+                <div
+                  class="card-body d-flex flex-column justify-content-between h-100"
+                >
+                  <h5 class="card-title text-dark">{{ article.title }}</h5>
+                  <div class="card-text fw-normal">
+                    <div v-html="article.description"></div>
+                  </div>
+                  <div class="text-end mt-md-0 mt-5">READ MORE</div>
                 </div>
-                <div class="text-end mt-md-0 mt-5">
-                  <RouterLink
-                    class="text-dark"
-                    :to="`/article/${article.id}`"
-                    v-if="article.isPublic"
-                  >
-                    READ MORE
-                  </RouterLink>
-                </div>
-              </div>
+              </RouterLink>
             </div>
           </div>
         </div>

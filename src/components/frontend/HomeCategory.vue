@@ -9,7 +9,7 @@
           data-aos-once="true"
           data-aos-duration="800"
         >
-          <div class="card border-0 mb-4 h-100">
+          <div class="card border-0 mb-4 h-100 card--hover">
             <a href="#" @click.prevent="toCategory('淺焙咖啡')">
               <div
                 style="
@@ -40,7 +40,7 @@
           data-aos-once="true"
           data-aos-duration="1500"
         >
-          <div class="card border-0 mb-4 h-100">
+          <div class="card border-0 mb-4 h-100 card--hover">
             <a href="#" @click.prevent="toCategory('中焙咖啡')">
               <div
                 style="
@@ -70,7 +70,7 @@
           data-aos-once="true"
           data-aos-duration="2000"
         >
-          <div class="card border-0 mb-4 h-100">
+          <div class="card border-0 mb-4 h-100 card--hover">
             <a href="#" @click.prevent="toCategory('深焙咖啡')">
               <div
                 style="

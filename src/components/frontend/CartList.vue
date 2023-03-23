@@ -1,13 +1,17 @@
 <template>
   <div class="col-md-6">
     <div v-if="cart.carts?.length">
-      <nav aria-label="breadcrumb mt-5">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item text-dark active" aria-current="page">購物車</li>
-          <li class="breadcrumb-item text-gray">訂單資訊</li>
-          <li class="breadcrumb-item text-gray">結帳</li>
-        </ol>
-      </nav>
+      <div class="d-flex">
+        <div class="text-dark active me-2">
+          購物車
+          <i class="bi bi-caret-right"></i>
+        </div>
+        <div class="text-gray me-2">
+          訂單資訊
+          <i class="bi bi-caret-right"></i>
+        </div>
+        <div class="text-gray">結帳</div>
+      </div>
       <div class="d-flex justify-content-between mb-5">
         <h2 class="mt-2 text-brown font-weight-bold">購物車</h2>
         <a href="#" class="fs-3" @click.prevent="deleteAllCarts">

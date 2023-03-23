@@ -1,14 +1,16 @@
 <template>
   <div class="container py-6">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item text-gray">購物車</li>
-        <li class="breadcrumb-item text-gray">訂單資訊</li>
-        <li class="breadcrumb-item text-dark active" aria-current="page">
-          結帳
-        </li>
-      </ol>
-    </nav>
+    <div class="d-flex">
+      <div class="text-gray active me-2">
+        購物車
+        <i class="bi bi-caret-right"></i>
+      </div>
+      <div class="text-gray me-2">
+        訂單資訊
+        <i class="bi bi-caret-right"></i>
+      </div>
+      <div class="text-dark">結帳</div>
+    </div>
     <div class="row py-4">
       <CheckoutCard />
     </div>
