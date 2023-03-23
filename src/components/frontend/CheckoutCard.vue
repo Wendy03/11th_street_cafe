@@ -125,7 +125,7 @@
       </div>
     </form>
     <div v-if="order.is_paid" class="text-end">
-      <RouterLink to="/" class="btn btn-dark me-2 my-4"> 回首頁 </RouterLink>
+      <RouterLink to="/products" class="btn btn-dark me-2 my-4"> 繼續購物 </RouterLink>
     </div>
   </div>
 </template>
