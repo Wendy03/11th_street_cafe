@@ -1,0 +1,1 @@
+import{j as s}from"./index-d0b7c076.js";const o=s("loadingStore",{state:()=>({loadingItem:"",isProcessing:!1,isLoading:!1})});export{o as s};
