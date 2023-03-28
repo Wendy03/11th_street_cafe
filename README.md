@@ -2,12 +2,15 @@
 
 ## Demo: https://wendy03.github.io/11th_street_cafe/#/
 
+
+![image](https://github.com/Wendy03/11th_street_cafe/blob/main/public/home.PNG)
+
 ## Installing
 
 #### 環境
 
 1.  
-  > - Vue: @vue/cli 4.4.1
+  > - Vite 4.0.0 
   > - Node: v10.15.0
 
 2.  專案套件
@@ -74,5 +77,3 @@
 ##### 14.新增文章
 ##### 15.編輯文章
 ##### 16.刪除文章
-
-[Imgur](https://imgur.com/rKupr85)
